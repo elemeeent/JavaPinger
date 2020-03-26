@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="533.0" style="-fx-border-color: black;" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="modules.Controller">
+  <children>
+      <TabPane prefHeight="447.0" prefWidth="532.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab closable="false" text="ICMP Check">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="529.0">
+                     <children>
+                        <ButtonBar layoutX="100.0" layoutY="45.0" prefHeight="38.0" prefWidth="400.0">
+                           <buttons>
+                            <Button alignment="CENTER" minWidth="63.0" mnemonicParsing="false" onMouseClicked="#pingGoogle" prefHeight="25.0" prefWidth="91.0" text="google.com" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#pingVk" prefHeight="25.0" prefWidth="150.0" text="vk.com" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#pingYandex" text="ya.ru" />
+                           </buttons>
+                        </ButtonBar>
+                        <Text layoutX="20.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ping basic:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextArea fx:id="outputTextICMP" layoutX="20.0" layoutY="185.0" prefHeight="147.0" prefWidth="488.0" style="-fx-border-color: black;" />
+                        <Text layoutX="20.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="20.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ping custom:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="inputTextICMP" layoutX="116.0" layoutY="123.0" onAction="#onEnterICMP" prefHeight="25.0" prefWidth="279.0" promptText="add ip address or domain name" />
+                        <Button alignment="CENTER" layoutX="411.0" layoutY="122.0" minWidth="63.0" mnemonicParsing="false" onMouseClicked="#pingCurrent" prefHeight="25.0" prefWidth="91.0" text="Run" />
+                        <ButtonBar layoutX="100.0" layoutY="83.0" prefHeight="25.0" prefWidth="399.0">
+                           <buttons>
+                              <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#pingRouter" prefHeight="25.0" text="Your Router" />
+                              <Button alignment="CENTER" minWidth="63.0" mnemonicParsing="false" onMouseClicked="#pingDNS" prefHeight="25.0" prefWidth="91.0" text="Your DNS" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#pingGateway" prefHeight="25.0" prefWidth="150.0" text="Your Gateway" />
+                           </buttons>
+                        </ButtonBar>
+                        <Text layoutX="132.0" layoutY="33.0" stroke="#0c16a6" strokeType="OUTSIDE" strokeWidth="0.25" text="Check your internet connection (ICMP)" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab closable="false" text="HTTP Check">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="418.0" prefWidth="529.0">
+                     <children>
+                        <ButtonBar layoutX="100.0" layoutY="64.0" prefHeight="38.0" prefWidth="400.0">
+                           <buttons>
+                              <Button alignment="CENTER" minWidth="63.0" mnemonicParsing="false" onMouseClicked="#httpGoogle" prefHeight="25.0" prefWidth="91.0" text="google.com" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#httpVk" prefHeight="25.0" prefWidth="150.0" text="vk.com" />
+                              <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#httpYandex" text="ya.ru" />
+                           </buttons>
+                        </ButtonBar>
+                        <Text layoutX="20.0" layoutY="88.0" lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Http basic:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextArea fx:id="outputTextHTTP" layoutX="20.0" layoutY="185.0" prefHeight="147.0" prefWidth="488.0" style="-fx-border-color: black;" />
+                        <Text layoutX="20.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Result:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="20.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Http custom:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="inputTextHTTP" layoutX="116.0" layoutY="123.0" onAction="#onEnterHTTP" prefHeight="25.0" prefWidth="279.0" promptText="add ip address or domain name" />
+                        <Button alignment="CENTER" layoutX="411.0" layoutY="122.0" minWidth="63.0" mnemonicParsing="false" onMouseClicked="#httpCurrent" prefHeight="25.0" prefWidth="91.0" text="Run" />
+                        <Text layoutX="111.0" layoutY="34.0" stroke="#0c16a6" strokeType="OUTSIDE" strokeWidth="0.25" text="Check your internet connection (HTTP)" textAlignment="CENTER" underline="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+  </children>
+</VBox>
